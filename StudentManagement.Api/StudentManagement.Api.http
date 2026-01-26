@@ -1,0 +1,147 @@
+@StudentManagement.Api_HostAddress = https://localhost:7140
+
+GET {{StudentManagement.Api_HostAddress}}/api/Students
+
+###
+
+POST {{StudentManagement.Api_HostAddress}}/api/students
+Content-Type: application/json
+
+{
+  "":""
+}
+
+###
+
+GET {{StudentManagement.Api_HostAddress}}/api/attendances
+
+###
+
+POST {{StudentManagement.Api_HostAddress}}/api/attendances
+Content-Type: application/json
+
+{
+  //AttendanceDto
+}
+
+###
+
+@id=string
+DELETE {{StudentManagement.Api_HostAddress}}/api/attendances/{{id}}
+
+###
+
+GET {{StudentManagement.Api_HostAddress}}/api/attendances/{{id}}
+
+###
+
+PUT {{StudentManagement.Api_HostAddress}}/api/attendances/{id}
+Content-Type: application/json
+
+{
+  //AttendanceDto
+}
+
+###
+
+GET {{StudentManagement.Api_HostAddress}}/api/groups
+
+###
+
+POST {{StudentManagement.Api_HostAddress}}/api/groups
+Content-Type: application/json
+
+{
+  //GroupDto
+}
+
+###
+
+DELETE {{StudentManagement.Api_HostAddress}}/api/groups/{{id}}
+
+###
+
+GET {{StudentManagement.Api_HostAddress}}/api/groups/{{id}}
+
+###
+
+PUT {{StudentManagement.Api_HostAddress}}/api/groups/{id}
+Content-Type: application/json
+
+{
+  //GroupDto
+}
+
+###
+
+GET {{StudentManagement.Api_HostAddress}}/api/lessons
+
+###
+
+POST {{StudentManagement.Api_HostAddress}}/api/lessons
+Content-Type: application/json
+
+{
+  //LessonDto
+}
+
+###
+
+DELETE {{StudentManagement.Api_HostAddress}}/api/lessons/{{id}}
+
+###
+
+GET {{StudentManagement.Api_HostAddress}}/api/lessons/{{id}}
+
+###
+
+PUT {{StudentManagement.Api_HostAddress}}/api/lessons/{id}
+Content-Type: application/json
+
+{
+  //LessonDto
+}
+
+###
+
+GET {{StudentManagement.Api_HostAddress}}/api/students
+
+###
+
+POST {{StudentManagement.Api_HostAddress}}/api/students
+Content-Type: application/json
+
+{
+  //StudentDto
+}
+
+###
+
+DELETE {{StudentManagement.Api_HostAddress}}/api/students/{{id}}
+
+###
+
+GET {{StudentManagement.Api_HostAddress}}/api/students/{{id}}
+
+###
+
+PUT {{StudentManagement.Api_HostAddress}}/api/students/{id}
+Content-Type: application/json
+
+{
+  //StudentDto
+}
+
+###
+
+GET {{StudentManagement.Api_HostAddress}}/count
+
+###
+
+GET {{StudentManagement.Api_HostAddress}}/count
+
+###
+
+GET {{StudentManagement.Api_HostAddress}}/count
+
+###
