@@ -1,23 +1,28 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using StudentManagement.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace StudentManagmentSystemApi.Data.Entities;
 
-public class Group
+public class Group : BaseEntity
 {
-    [Key]
-    public string Id { get; set; } = default!;
+
+    [Required]
     [MaxLength(50)]
-    public string GroupName { get; set; } = default!;
+    public string Name { get; set; } = default!;
+
     public byte AcademicYear { get; set; }
+
+    [Required]
     [MaxLength(50)]
     public string LessonDate { get; set; } = default!;
-    public DateTime CreatedAt { get; set; }
 
-
-    public virtual List<Student> Students { get; set; } = new();
-    public virtual List<Lesson> Lessons { get; set; } = new();
+    // Navigation properties
+    public virtual ICollection<Student> Students { get; set; } = new List<Student>();
+    public virtual ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
 
 
 }
+
+
 
 

@@ -142,7 +142,7 @@ internal class PaymentServices(IBaseRepository<Payment> _repoPayment ,
 
             // Step 2: Map updated values from the DTO to the entity
             payment.IsPaid = IsPaid;
-            payment.UdatedAt = LocalDate.GetLocalDate();
+            payment.UpdatedAt = LocalDate.GetLocalDate();
             // Step 3: Update the entity in the repository
             await _repoPayment.UpdateAsync(payment);
 

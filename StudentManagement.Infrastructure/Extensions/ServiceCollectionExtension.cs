@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StudentManagement.Domain.Entities;
 using StudentManagement.Domain.IBaseRepositories;
 
 using StudentManagement.Infrastructure.ImpRepositories;
@@ -18,6 +20,11 @@ public static class ServiceCollectionExtension
 
         services.AddScoped<IUserSeeder, UserSeeder>();
         services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+
+
+        // add the config of identity
+        services.AddIdentity<User, IdentityRole>()
+            .AddEntityFrameworkStores<ApplicationDbContext>();
         //services.AddScoped<IStudentRepository,StudentRepository>();
         //services.AddScoped<IGroupRepository,GroupRepository>();
 

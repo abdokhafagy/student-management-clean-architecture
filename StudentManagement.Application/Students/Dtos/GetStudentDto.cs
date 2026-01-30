@@ -14,7 +14,7 @@ public class GetStudentDto
     public bool IsDeleted { get; set; }
     public bool IsActive { get; set; }
     public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
+    public DateTime? UpdatedAt { get; set; }
     public string GroupId { get; set; } = default!;
     public List<GetAttStudentDto> Attendances { get; set; } = default!;
     public List<GetPayStudentDto> Payments { get; set; } = default!;

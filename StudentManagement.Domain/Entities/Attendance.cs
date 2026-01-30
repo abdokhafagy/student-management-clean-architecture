@@ -1,22 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using StudentManagement.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StudentManagmentSystemApi.Data.Entities;
 
-public class Attendance
+public class Attendance: BaseEntity
 {
-    [Key]
-    public string Id { get; set; } = default!;
     public bool AttendanceStatus { get; set; }
-
-    public string StudentId { get; set; } = default!;
-    public Student Student { get; set; } = default!;
-
-    public string LessonId { get; set; } = default!;
-    public Lesson Lesson { get; set; } = default!;
 
     public int ExamResult { get; set; }
 
-    public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
+    // Foreign keys
+    [ForeignKey(nameof(Student))]
+    public string StudentId { get; set; } = default!;
+    public virtual Student Student { get; set; } = default!;
+
+    [ForeignKey(nameof(Lesson))]
+    public string LessonId { get; set; } = default!;
+    public virtual Lesson Lesson { get; set; } = default!;
+
+
 
 }

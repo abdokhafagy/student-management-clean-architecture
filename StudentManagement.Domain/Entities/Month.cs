@@ -1,18 +1,25 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using StudentManagement.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace StudentManagmentSystemApi.Data.Entities;
 
-public class Month
+public class Month : BaseEntity
 {
-  
-    [Key]
-    public string Id { get; set; } = default!;
+
+    [Required]
     [MaxLength(50)]
     public string Name { get; set; } = default!;
-    public DateTime CreatedAt { get; set; }
 
-    public virtual List<Payment> Payments { get; set; } = new();
-    public virtual List<Lesson> Lessons { get; set; } = new();
+    [Required]
+    public int Year { get; set; }  // ADD THIS: To distinguish Jan 2024 vs Jan 2025
+
+    public bool IsActive { get; set; } = true;
+
+    public int Order { get; set; }  // For sorting (1=January, 2=February, etc.)
+
+    // Navigation properties
+    public virtual ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
+    public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
 }
 /*
  * public class Month
